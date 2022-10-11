@@ -1,7 +1,11 @@
-.counter{
+.container{
   margin: 100px;
   padding: 20px;
   border: 1px solid grey;
+}
+.counter{
+  padding: 20px;
+  border: 1px solid blue;
 }
 .light-theme{
   padding: 20px;

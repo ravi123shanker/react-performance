@@ -1,8 +1,8 @@
 import "./App.css";
-import Counter from "./Counter";
+import FnAppContainerFixed from "./components/v2/FnAppContainerFixed";
 
 function App() {
-  return <Counter />;
+  return <FnAppContainerFixed />;
 }
 
 export default App;

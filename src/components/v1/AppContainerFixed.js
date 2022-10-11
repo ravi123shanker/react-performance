@@ -1,6 +1,7 @@
 import React, { Component } from "react";
-import Child from "./Child";
-class CounterFixed extends Component {
+import Counter from "./Counter";
+import Theme from "./Theme";
+class AppContainerFixed extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -12,7 +13,8 @@ class CounterFixed extends Component {
     };
   }
   onIncrement = () => {
-    this.setState({ counter: this.state.counter + 1 });
+    const counter = this.state.counter;
+    this.setState({ counter: counter + 1 });
   };
   onThemeChange = () => {
     const { theme } = this.state;
@@ -25,15 +27,12 @@ class CounterFixed extends Component {
   };
   render() {
     return (
-      <div className="counter">
-        <div>
-          <h2>Counter: {this.state.counter}</h2>
-          <button onClick={this.onIncrement}>+</button>
-        </div>
-        <Child onThemeChange={this.onThemeChange} theme={this.state.theme} />
+      <div className="container">
+        <Counter counter={this.state.counter} onIncrement={this.onIncrement} />
+        <Theme theme={this.state.theme} onThemeChange={this.onThemeChange} />
       </div>
     );
   }
 }
 
-export default CounterFixed;
+export default AppContainerFixed;

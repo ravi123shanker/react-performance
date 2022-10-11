@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-class Child extends Component {
+class Theme extends Component {
   constructor(props) {
     super(props);
   }
@@ -7,11 +7,11 @@ class Child extends Component {
     const { theme, onThemeChange } = this.props;
     return (
       <div className={`${theme.className}`}>
-        <h2>Child</h2>
+        <h2>Theme</h2>
         <button onClick={onThemeChange}>Change Theme</button>
       </div>
     );
   }
 }
 
-export default Child;
+export default Theme;

@@ -1,11 +1,11 @@
 import React from "react";
-const Child = ({ theme, onThemeChange }) => {
+const Theme = ({ theme, onThemeChange }) => {
   return (
     <div className={`${theme.className}`}>
-      <h2>Child</h2>
+      <h2>Theme</h2>
       <button onClick={onThemeChange}>Change Theme</button>
     </div>
   );
 };
 
-export default Child;
+export default Theme;

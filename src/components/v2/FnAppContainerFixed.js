@@ -1,6 +1,7 @@
 import React, { useCallback, useState } from "react";
-import Child from "./Child";
-const FnCounterFixed = (props) => {
+import Counter from "./Counter";
+import Child from "./Theme";
+const FnAppContainerFixed = (props) => {
   const [counter, setCounter] = useState(0);
   const [theme, setTheme] = useState({ light: true, className: "light-theme" });
   const onIncrement = useCallback(() => {
@@ -14,14 +15,11 @@ const FnCounterFixed = (props) => {
   }, []);
 
   return (
-    <div className="counter">
-      <div>
-        <h2>Counter: {counter}</h2>
-        <button onClick={onIncrement}>+</button>
-      </div>
+    <div className="container">
+      <Counter counter={counter} onIncrement={onIncrement} />
       <Child onThemeChange={onThemeChange} theme={theme} />
     </div>
   );
 };
 
-export default FnCounterFixed;
+export default FnAppContainerFixed;
