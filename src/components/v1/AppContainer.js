@@ -1,6 +1,7 @@
 import React, { Component } from "react";
-import Child from "./Child";
-class Counter extends Component {
+import Counter from "./Counter";
+import Theme from "./Theme";
+class AppContainer extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -8,7 +9,8 @@ class Counter extends Component {
       lightTheme: true,
     };
   }
-  onIncrement = (counter) => {
+  onIncrement = () => {
+    const counter = this.state.counter;
     this.setState({ counter: counter + 1 });
   };
   onThemeChange = () => {
@@ -16,23 +18,21 @@ class Counter extends Component {
   };
   render() {
     return (
-      <div className="counter">
-        <div>
-          <h2>Counter: {this.state.counter}</h2>
-          <button onClick={() => this.onIncrement(this.state.counter)}>
-            +
-          </button>
-        </div>
-        <Child
-          onThemeChange={() => this.onThemeChange()}
+      <div className="container">
+        <Counter
+          counter={this.state.counter}
+          onIncrement={() => this.onIncrement()}
+        />
+        <Theme
           theme={{
             light: this.state.lightTheme,
             className: this.state.lightTheme ? "light-theme" : "dark-theme",
           }}
+          onThemeChange={() => this.onThemeChange()}
         />
       </div>
     );
   }
 }
 
-export default Counter;
+export default AppContainer;

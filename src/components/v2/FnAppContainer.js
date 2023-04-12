@@ -1,29 +1,27 @@
 import React, { useState } from "react";
-import Child from "./Child";
-const FnCounter = (props) => {
+import Counter from "./Counter";
+import Theme from "./Theme";
+const FnAppContainer = (props) => {
   const [counter, setCounter] = useState(0);
   const [lightTheme, setLighTheme] = useState(true);
   const onIncrement = () => {
-    setCounter(counter + 1 );
+    setCounter(counter + 1);
   };
   const onThemeChange = () => {
     setLighTheme(!lightTheme);
   };
   return (
-    <div className="counter">
-      <div>
-        <h2>Counter: {counter}</h2>
-        <button onClick={onIncrement}>+</button>
-      </div>
-      <Child
-        onThemeChange={onThemeChange}
+    <div className="container">
+      <Counter counter={counter} onIncrement={onIncrement} />
+      <Theme
         theme={{
           light: lightTheme,
           className: lightTheme ? "light-theme" : "dark-theme",
         }}
+        onThemeChange={onThemeChange}
       />
     </div>
   );
 };
 
-export default FnCounter;
+export default FnAppContainer;
