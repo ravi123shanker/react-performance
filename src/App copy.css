@@ -1,0 +1,23 @@
+.container{
+  margin: 100px;
+  padding: 20px;
+  border: 1px solid grey;
+}
+.counter{
+  padding: 20px;
+  border: 1px solid blue;
+}
+.light-theme{
+  padding: 20px;
+  margin-top: 10px;
+  border: 1px solid green;
+  color: blue;
+  background-color: greenyellow;
+}
+.dark-theme{
+  padding: 20px;
+  margin-top: 10px;
+  border: 1px solid yellow;
+  color: red;
+  background-color: goldenrod;
+}
